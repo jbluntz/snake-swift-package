@@ -1,0 +1,6 @@
+framework module SnakeModel {
+    umbrella header "SnakeModel.h"
+
+    export *
+    module * { export * }
+}
