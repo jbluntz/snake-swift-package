@@ -6,9 +6,9 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class SnakeModelKotlinThrowable, SnakeModelDirection, SnakeModelSnakeViewModel, SnakeModelPoint, SnakeModelNullableFlowWrapper<T>, SnakeModelSnake, SnakeModelFlowWrapper<T>, SnakeModelKotlinEnum<E>, SnakeModelKotlinArray<T>, SnakeModelKotlinUnit, SnakeModelKotlinx_coroutines_coreCancellationException, SnakeModelKotlinException, SnakeModelKotlinRuntimeException, SnakeModelKotlinIllegalStateException, SnakeModelKotlinx_coroutines_coreAtomicDesc, SnakeModelKotlinx_coroutines_coreLockFreeLinkedListNodePrepareOp, SnakeModelKotlinx_coroutines_coreAtomicOp<__contravariant T>, SnakeModelKotlinx_coroutines_coreOpDescriptor, SnakeModelKotlinx_coroutines_coreLockFreeLinkedListNode, SnakeModelKotlinx_coroutines_coreLockFreeLinkedListNodeAbstractAtomicDesc, SnakeModelKotlinx_coroutines_coreLockFreeLinkedListNodeAddLastDesc<T>, SnakeModelKotlinx_coroutines_coreLockFreeLinkedListNodeRemoveFirstDesc<T>;
+@class SnakeModelKotlinThrowable, SnakeModelDirection, SnakeModelSnakeViewModel, SnakeModelPoint, SnakeModelNullableStateFlowWrapper<T>, SnakeModelSnake, SnakeModelStateFlowWrapper<T>, SnakeModelKotlinEnum<E>, SnakeModelKotlinArray<T>, SnakeModelKotlinUnit, SnakeModelKotlinx_coroutines_coreCancellationException, SnakeModelKotlinException, SnakeModelKotlinRuntimeException, SnakeModelKotlinIllegalStateException, SnakeModelKotlinx_coroutines_coreAtomicDesc, SnakeModelKotlinx_coroutines_coreLockFreeLinkedListNodePrepareOp, SnakeModelKotlinx_coroutines_coreAtomicOp<__contravariant T>, SnakeModelKotlinx_coroutines_coreOpDescriptor, SnakeModelKotlinx_coroutines_coreLockFreeLinkedListNode, SnakeModelKotlinx_coroutines_coreLockFreeLinkedListNodeAbstractAtomicDesc, SnakeModelKotlinx_coroutines_coreLockFreeLinkedListNodeAddLastDesc<T>, SnakeModelKotlinx_coroutines_coreLockFreeLinkedListNodeRemoveFirstDesc<T>;
 
-@protocol SnakeModelKotlinx_coroutines_coreCoroutineScope, SnakeModelKotlinx_coroutines_coreFlow, SnakeModelKotlinx_coroutines_coreJob, SnakeModelISnakeViewModel, SnakeModelKotlinx_coroutines_coreStateFlow, SnakeModelKotlinComparable, SnakeModelKotlinCoroutineContext, SnakeModelKotlinx_coroutines_coreFlowCollector, SnakeModelKotlinx_coroutines_coreChildHandle, SnakeModelKotlinx_coroutines_coreChildJob, SnakeModelKotlinx_coroutines_coreDisposableHandle, SnakeModelKotlinSequence, SnakeModelKotlinx_coroutines_coreSelectClause0, SnakeModelKotlinCoroutineContextKey, SnakeModelKotlinCoroutineContextElement, SnakeModelKotlinx_coroutines_coreSharedFlow, SnakeModelKotlinIterator, SnakeModelKotlinx_coroutines_coreParentJob, SnakeModelKotlinx_coroutines_coreSelectInstance, SnakeModelKotlinSuspendFunction0, SnakeModelKotlinContinuation, SnakeModelKotlinFunction;
+@protocol SnakeModelKotlinx_coroutines_coreCoroutineScope, SnakeModelKotlinx_coroutines_coreFlow, SnakeModelKotlinx_coroutines_coreJob, SnakeModelKotlinx_coroutines_coreStateFlow, SnakeModelISnakeViewModel, SnakeModelKotlinComparable, SnakeModelKotlinCoroutineContext, SnakeModelKotlinx_coroutines_coreFlowCollector, SnakeModelKotlinx_coroutines_coreChildHandle, SnakeModelKotlinx_coroutines_coreChildJob, SnakeModelKotlinx_coroutines_coreDisposableHandle, SnakeModelKotlinSequence, SnakeModelKotlinx_coroutines_coreSelectClause0, SnakeModelKotlinCoroutineContextKey, SnakeModelKotlinCoroutineContextElement, SnakeModelKotlinx_coroutines_coreSharedFlow, SnakeModelKotlinIterator, SnakeModelKotlinx_coroutines_coreParentJob, SnakeModelKotlinx_coroutines_coreSelectInstance, SnakeModelKotlinSuspendFunction0, SnakeModelKotlinContinuation, SnakeModelKotlinFunction;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -165,6 +165,15 @@ __attribute__((swift_name("NullableFlowWrapper")))
 @end;
 
 __attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("NullableStateFlowWrapper")))
+@interface SnakeModelNullableStateFlowWrapper<T> : SnakeModelBase
+- (instancetype)initWithScope:(id<SnakeModelKotlinx_coroutines_coreCoroutineScope>)scope flow:(id<SnakeModelKotlinx_coroutines_coreStateFlow>)flow __attribute__((swift_name("init(scope:flow:)"))) __attribute__((objc_designated_initializer));
+- (id<SnakeModelKotlinx_coroutines_coreJob>)subscribeOnEach:(void (^)(T _Nullable))onEach onError:(void (^)(SnakeModelKotlinThrowable *))onError onComplete:(void (^)(void))onComplete __attribute__((swift_name("subscribe(onEach:onError:onComplete:)")));
+@property (readonly) NSArray<id> *replayCache __attribute__((swift_name("replayCache")));
+@property (readonly) T _Nullable value __attribute__((swift_name("value")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("SnakeViewModel")))
 @interface SnakeModelSnakeViewModel : SnakeModelBase <SnakeModelISnakeViewModel>
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
@@ -188,11 +197,20 @@ __attribute__((swift_name("SnakeViewModelIos")))
 - (void)doInitXSize:(float)xSize ySize:(float)ySize __attribute__((swift_name("doInit(xSize:ySize:)")));
 - (void)reset __attribute__((swift_name("reset()")));
 - (void)turnDirection:(SnakeModelDirection *)direction __attribute__((swift_name("turn(direction:)")));
-@property (readonly) SnakeModelNullableFlowWrapper<SnakeModelPoint *> *apple __attribute__((swift_name("apple")));
+@property (readonly) SnakeModelNullableStateFlowWrapper<SnakeModelPoint *> *apple __attribute__((swift_name("apple")));
 @property (readonly) float appleRadius __attribute__((swift_name("appleRadius")));
 @property (readonly) id<SnakeModelKotlinx_coroutines_coreFlow> dead __attribute__((swift_name("dead")));
 @property (readonly) BOOL isInitialized __attribute__((swift_name("isInitialized")));
-@property (readonly) SnakeModelFlowWrapper<SnakeModelSnake *> *snake __attribute__((swift_name("snake")));
+@property (readonly) SnakeModelStateFlowWrapper<SnakeModelSnake *> *snake __attribute__((swift_name("snake")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("StateFlowWrapper")))
+@interface SnakeModelStateFlowWrapper<T> : SnakeModelBase
+- (instancetype)initWithScope:(id<SnakeModelKotlinx_coroutines_coreCoroutineScope>)scope flow:(id<SnakeModelKotlinx_coroutines_coreStateFlow>)flow __attribute__((swift_name("init(scope:flow:)"))) __attribute__((objc_designated_initializer));
+- (id<SnakeModelKotlinx_coroutines_coreJob>)subscribeOnEach:(void (^)(T))onEach onError:(void (^)(SnakeModelKotlinThrowable *))onError onComplete:(void (^)(void))onComplete __attribute__((swift_name("subscribe(onEach:onError:onComplete:)")));
+@property (readonly) NSArray<T> *replayCache __attribute__((swift_name("replayCache")));
+@property (readonly) T value __attribute__((swift_name("value")));
 @end;
 
 __attribute__((swift_name("KotlinComparable")))
