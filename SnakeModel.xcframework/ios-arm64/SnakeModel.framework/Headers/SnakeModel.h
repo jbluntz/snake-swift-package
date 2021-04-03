@@ -6,9 +6,9 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class SnakeModelKotlinThrowable, SnakeModelDirection, SnakeModelSnakeViewModel, SnakeModelPoint, SnakeModelNullableStateFlowWrapper<T>, SnakeModelSnake, SnakeModelStateFlowWrapper<T>, SnakeModelKotlinEnum<E>, SnakeModelKotlinArray<T>, SnakeModelKotlinUnit, SnakeModelKotlinx_coroutines_coreCancellationException, SnakeModelKotlinException, SnakeModelKotlinRuntimeException, SnakeModelKotlinIllegalStateException, SnakeModelKotlinx_coroutines_coreAtomicDesc, SnakeModelKotlinx_coroutines_coreLockFreeLinkedListNodePrepareOp, SnakeModelKotlinx_coroutines_coreAtomicOp<__contravariant T>, SnakeModelKotlinx_coroutines_coreOpDescriptor, SnakeModelKotlinx_coroutines_coreLockFreeLinkedListNode, SnakeModelKotlinx_coroutines_coreLockFreeLinkedListNodeAbstractAtomicDesc, SnakeModelKotlinx_coroutines_coreLockFreeLinkedListNodeAddLastDesc<T>, SnakeModelKotlinx_coroutines_coreLockFreeLinkedListNodeRemoveFirstDesc<T>;
+@class SnakeModelKotlinThrowable, SnakeModelDirection, SnakeModelNullableFlowWrapper<T>, SnakeModelSnakeViewModel, SnakeModelPoint, SnakeModelNullableStateFlowWrapper<T>, SnakeModelSnake, SnakeModelStateFlowWrapper<T>, SnakeModelFlowWrapper<T>, SnakeModelKotlinEnum<E>, SnakeModelKotlinArray<T>, SnakeModelKotlinx_coroutines_coreCancellationException, SnakeModelKotlinUnit, SnakeModelKotlinException, SnakeModelKotlinRuntimeException, SnakeModelKotlinIllegalStateException, SnakeModelKotlinx_coroutines_coreAtomicDesc, SnakeModelKotlinx_coroutines_coreLockFreeLinkedListNodePrepareOp, SnakeModelKotlinx_coroutines_coreAtomicOp<__contravariant T>, SnakeModelKotlinx_coroutines_coreOpDescriptor, SnakeModelKotlinx_coroutines_coreLockFreeLinkedListNode, SnakeModelKotlinx_coroutines_coreLockFreeLinkedListNodeAbstractAtomicDesc, SnakeModelKotlinx_coroutines_coreLockFreeLinkedListNodeAddLastDesc<T>, SnakeModelKotlinx_coroutines_coreLockFreeLinkedListNodeRemoveFirstDesc<T>;
 
-@protocol SnakeModelKotlinx_coroutines_coreCoroutineScope, SnakeModelKotlinx_coroutines_coreFlow, SnakeModelKotlinx_coroutines_coreJob, SnakeModelKotlinx_coroutines_coreStateFlow, SnakeModelISnakeViewModel, SnakeModelKotlinComparable, SnakeModelKotlinCoroutineContext, SnakeModelKotlinx_coroutines_coreFlowCollector, SnakeModelKotlinx_coroutines_coreChildHandle, SnakeModelKotlinx_coroutines_coreChildJob, SnakeModelKotlinx_coroutines_coreDisposableHandle, SnakeModelKotlinSequence, SnakeModelKotlinx_coroutines_coreSelectClause0, SnakeModelKotlinCoroutineContextKey, SnakeModelKotlinCoroutineContextElement, SnakeModelKotlinx_coroutines_coreSharedFlow, SnakeModelKotlinIterator, SnakeModelKotlinx_coroutines_coreParentJob, SnakeModelKotlinx_coroutines_coreSelectInstance, SnakeModelKotlinSuspendFunction0, SnakeModelKotlinContinuation, SnakeModelKotlinFunction;
+@protocol SnakeModelKotlinx_coroutines_coreJob, SnakeModelKotlinx_coroutines_coreFlow, SnakeModelKotlinx_coroutines_coreCoroutineScope, SnakeModelKotlinx_coroutines_coreStateFlow, SnakeModelISnakeViewModel, SnakeModelKotlinComparable, SnakeModelKotlinx_coroutines_coreChildHandle, SnakeModelKotlinx_coroutines_coreChildJob, SnakeModelKotlinx_coroutines_coreDisposableHandle, SnakeModelKotlinSequence, SnakeModelKotlinx_coroutines_coreSelectClause0, SnakeModelKotlinCoroutineContextKey, SnakeModelKotlinCoroutineContextElement, SnakeModelKotlinCoroutineContext, SnakeModelKotlinx_coroutines_coreFlowCollector, SnakeModelKotlinx_coroutines_coreSharedFlow, SnakeModelKotlinIterator, SnakeModelKotlinx_coroutines_coreParentJob, SnakeModelKotlinx_coroutines_coreSelectInstance, SnakeModelKotlinSuspendFunction0, SnakeModelKotlinContinuation, SnakeModelKotlinFunction;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -138,10 +138,8 @@ __attribute__((swift_name("KotlinBoolean")))
 + (instancetype)numberWithBool:(BOOL)value;
 @end;
 
-__attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("FlowWrapper")))
 @interface SnakeModelFlowWrapper<T> : SnakeModelBase
-- (instancetype)initWithScope:(id<SnakeModelKotlinx_coroutines_coreCoroutineScope>)scope flow:(id<SnakeModelKotlinx_coroutines_coreFlow>)flow __attribute__((swift_name("init(scope:flow:)"))) __attribute__((objc_designated_initializer));
 - (id<SnakeModelKotlinx_coroutines_coreJob>)subscribeOnEach:(void (^)(T))onEach onError:(void (^)(SnakeModelKotlinThrowable *))onError onComplete:(void (^)(void))onComplete __attribute__((swift_name("subscribe(onEach:onError:onComplete:)")));
 @end;
 
@@ -157,18 +155,15 @@ __attribute__((swift_name("ISnakeViewModel")))
 @property (readonly) BOOL isInitialized __attribute__((swift_name("isInitialized")));
 @end;
 
-__attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("NullableFlowWrapper")))
 @interface SnakeModelNullableFlowWrapper<T> : SnakeModelBase
-- (instancetype)initWithScope:(id<SnakeModelKotlinx_coroutines_coreCoroutineScope>)scope flow:(id<SnakeModelKotlinx_coroutines_coreFlow>)flow __attribute__((swift_name("init(scope:flow:)"))) __attribute__((objc_designated_initializer));
 - (id<SnakeModelKotlinx_coroutines_coreJob>)subscribeOnEach:(void (^)(T _Nullable))onEach onError:(void (^)(SnakeModelKotlinThrowable *))onError onComplete:(void (^)(void))onComplete __attribute__((swift_name("subscribe(onEach:onError:onComplete:)")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("NullableStateFlowWrapper")))
-@interface SnakeModelNullableStateFlowWrapper<T> : SnakeModelBase
+@interface SnakeModelNullableStateFlowWrapper<T> : SnakeModelNullableFlowWrapper<T>
 - (instancetype)initWithScope:(id<SnakeModelKotlinx_coroutines_coreCoroutineScope>)scope flow:(id<SnakeModelKotlinx_coroutines_coreStateFlow>)flow __attribute__((swift_name("init(scope:flow:)"))) __attribute__((objc_designated_initializer));
-- (id<SnakeModelKotlinx_coroutines_coreJob>)subscribeOnEach:(void (^)(T _Nullable))onEach onError:(void (^)(SnakeModelKotlinThrowable *))onError onComplete:(void (^)(void))onComplete __attribute__((swift_name("subscribe(onEach:onError:onComplete:)")));
 @property (readonly) NSArray<id> *replayCache __attribute__((swift_name("replayCache")));
 @property (readonly) T _Nullable value __attribute__((swift_name("value")));
 @end;
@@ -206,9 +201,8 @@ __attribute__((swift_name("SnakeViewModelIos")))
 
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("StateFlowWrapper")))
-@interface SnakeModelStateFlowWrapper<T> : SnakeModelBase
+@interface SnakeModelStateFlowWrapper<T> : SnakeModelFlowWrapper<T>
 - (instancetype)initWithScope:(id<SnakeModelKotlinx_coroutines_coreCoroutineScope>)scope flow:(id<SnakeModelKotlinx_coroutines_coreStateFlow>)flow __attribute__((swift_name("init(scope:flow:)"))) __attribute__((objc_designated_initializer));
-- (id<SnakeModelKotlinx_coroutines_coreJob>)subscribeOnEach:(void (^)(T))onEach onError:(void (^)(SnakeModelKotlinThrowable *))onError onComplete:(void (^)(void))onComplete __attribute__((swift_name("subscribe(onEach:onError:onComplete:)")));
 @property (readonly) NSArray<T> *replayCache __attribute__((swift_name("replayCache")));
 @property (readonly) T value __attribute__((swift_name("value")));
 @end;
@@ -278,23 +272,6 @@ __attribute__((swift_name("Snake")))
 - (BOOL)isOppositeDirection:(SnakeModelDirection *)direction __attribute__((swift_name("isOpposite(direction:)")));
 @end;
 
-__attribute__((swift_name("Kotlinx_coroutines_coreCoroutineScope")))
-@protocol SnakeModelKotlinx_coroutines_coreCoroutineScope
-@required
-@property (readonly) id<SnakeModelKotlinCoroutineContext> coroutineContext __attribute__((swift_name("coroutineContext")));
-@end;
-
-__attribute__((swift_name("Kotlinx_coroutines_coreFlow")))
-@protocol SnakeModelKotlinx_coroutines_coreFlow
-@required
-
-/**
- @note This method converts instances of CancellationException to errors.
- Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)collectCollector:(id<SnakeModelKotlinx_coroutines_coreFlowCollector>)collector completionHandler:(void (^)(SnakeModelKotlinUnit * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("collect(collector:completionHandler:)")));
-@end;
-
 __attribute__((swift_name("KotlinCoroutineContext")))
 @protocol SnakeModelKotlinCoroutineContext
 @required
@@ -345,6 +322,23 @@ __attribute__((swift_name("KotlinThrowable")))
 - (NSString *)description __attribute__((swift_name("description()")));
 @property (readonly) SnakeModelKotlinThrowable * _Nullable cause __attribute__((swift_name("cause")));
 @property (readonly) NSString * _Nullable message __attribute__((swift_name("message")));
+@end;
+
+__attribute__((swift_name("Kotlinx_coroutines_coreFlow")))
+@protocol SnakeModelKotlinx_coroutines_coreFlow
+@required
+
+/**
+ @note This method converts instances of CancellationException to errors.
+ Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)collectCollector:(id<SnakeModelKotlinx_coroutines_coreFlowCollector>)collector completionHandler:(void (^)(SnakeModelKotlinUnit * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("collect(collector:completionHandler:)")));
+@end;
+
+__attribute__((swift_name("Kotlinx_coroutines_coreCoroutineScope")))
+@protocol SnakeModelKotlinx_coroutines_coreCoroutineScope
+@required
+@property (readonly) id<SnakeModelKotlinCoroutineContext> coroutineContext __attribute__((swift_name("coroutineContext")));
 @end;
 
 __attribute__((swift_name("Kotlinx_coroutines_coreSharedFlow")))
@@ -407,26 +401,6 @@ __attribute__((swift_name("KotlinCancellationException")))
 - (instancetype)initWithCause:(SnakeModelKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(cause:)"))) __attribute__((objc_designated_initializer));
 @end;
 
-__attribute__((swift_name("Kotlinx_coroutines_coreFlowCollector")))
-@protocol SnakeModelKotlinx_coroutines_coreFlowCollector
-@required
-
-/**
- @note This method converts instances of CancellationException to errors.
- Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)emitValue:(id _Nullable)value completionHandler:(void (^)(SnakeModelKotlinUnit * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("emit(value:completionHandler:)")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("KotlinUnit")))
-@interface SnakeModelKotlinUnit : SnakeModelBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)unit __attribute__((swift_name("init()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@end;
-
 __attribute__((swift_name("Kotlinx_coroutines_coreDisposableHandle")))
 @protocol SnakeModelKotlinx_coroutines_coreDisposableHandle
 @required
@@ -454,6 +428,15 @@ __attribute__((swift_name("Kotlinx_coroutines_coreCancellationException")))
 - (instancetype)initWithCause:(SnakeModelKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(cause:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 @end;
 
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("KotlinUnit")))
+@interface SnakeModelKotlinUnit : SnakeModelBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)unit __attribute__((swift_name("init()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@end;
+
 __attribute__((swift_name("KotlinSequence")))
 @protocol SnakeModelKotlinSequence
 @required
@@ -469,6 +452,17 @@ __attribute__((swift_name("Kotlinx_coroutines_coreSelectClause0")))
 __attribute__((swift_name("KotlinCoroutineContextKey")))
 @protocol SnakeModelKotlinCoroutineContextKey
 @required
+@end;
+
+__attribute__((swift_name("Kotlinx_coroutines_coreFlowCollector")))
+@protocol SnakeModelKotlinx_coroutines_coreFlowCollector
+@required
+
+/**
+ @note This method converts instances of CancellationException to errors.
+ Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)emitValue:(id _Nullable)value completionHandler:(void (^)(SnakeModelKotlinUnit * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("emit(value:completionHandler:)")));
 @end;
 
 __attribute__((swift_name("KotlinIterator")))
